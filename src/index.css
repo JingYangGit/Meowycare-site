@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Meowy.Care Design System - Opal-inspired dreamy, comforting, healing palette */
+
+@layer base {
+  :root {
+    /* Opal-inspired dreamy palette */
+    --background: 270 30% 98%;
+    --foreground: 270 25% 20%;
+
+    --card: 270 40% 99%;
+    --card-foreground: 270 25% 20%;
+
+    --popover: 270 40% 99%;
+    --popover-foreground: 270 25% 20%;
+
+    /* Primary - Soft lavender purple */
+    --primary: 270 50% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Gentle pink */
+    --secondary: 330 45% 90%;
+    --secondary-foreground: 330 40% 30%;
+
+    --muted: 270 20% 94%;
+    --muted-foreground: 270 15% 45%;
+
+    /* Accent - Warm peachy pink */
+    --accent: 15 60% 85%;
+    --accent-foreground: 15 50% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 25% 90%;
+    --input: 270 25% 90%;
+    --ring: 270 50% 65%;
+
+    --radius: 1rem;
+
+    /* Custom Meowy colors */
+    --meowy-lavender: 270 50% 75%;
+    --meowy-lavender-soft: 270 40% 92%;
+    --meowy-pink: 330 55% 80%;
+    --meowy-pink-soft: 330 45% 94%;
+    --meowy-peach: 15 60% 85%;
+    --meowy-blue: 210 60% 85%;
+    --meowy-blue-soft: 210 50% 95%;
+    --meowy-cream: 40 40% 96%;
+    --meowy-purple-deep: 270 45% 55%;
+    --meowy-glow: 270 60% 80%;
+
+    /* Pink-Purple to Teal-Cyan gradient colors */
+    --meowy-gradient-pink: 320 60% 92%;
+    --meowy-gradient-purple: 280 50% 90%;
+    --meowy-gradient-teal: 175 50% 88%;
+    --meowy-gradient-cyan: 190 60% 92%;
+    --meowy-accent-purple: 280 60% 70%;
+    --meowy-accent-teal: 175 60% 50%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(270 40% 95%), hsl(330 40% 95%), hsl(210 50% 95%));
+    --gradient-sphere: radial-gradient(circle, hsl(270 60% 85%), hsl(330 50% 85%), hsl(210 60% 90%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(270 30% 98%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(270 50% 65% / 0.15);
+    --shadow-glow: 0 0 60px 20px hsl(270 60% 80% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(270 40% 50% / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 270 30% 8%;
+    --foreground: 270 20% 95%;
+
+    --card: 270 25% 12%;
+    --card-foreground: 270 20% 95%;
+
+    --popover: 270 25% 12%;
+    --popover-foreground: 270 20% 95%;
+
+    --primary: 270 50% 70%;
+    --primary-foreground: 270 30% 10%;
+
+    --secondary: 330 35% 20%;
+    --secondary-foreground: 330 30% 90%;
+
+    --muted: 270 20% 18%;
+    --muted-foreground: 270 15% 65%;
+
+    --accent: 15 40% 25%;
+    --accent-foreground: 15 40% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 20% 20%;
+    --input: 270 20% 20%;
+    --ring: 270 50% 70%;
+
+    --meowy-lavender: 270 45% 60%;
+    --meowy-lavender-soft: 270 30% 20%;
+    --meowy-pink: 330 45% 55%;
+    --meowy-pink-soft: 330 30% 18%;
+    --meowy-peach: 15 50% 50%;
+    --meowy-blue: 210 50% 55%;
+    --meowy-blue-soft: 210 40% 18%;
+    --meowy-cream: 40 20% 15%;
+    --meowy-purple-deep: 270 50% 50%;
+    --meowy-glow: 270 50% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--meowy-accent-purple)), hsl(var(--meowy-accent-teal)));
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--meowy-lavender-soft)), hsl(var(--meowy-pink-soft)), hsl(var(--meowy-blue-soft)));
+  }
+
+  .bg-gradient-section {
+    background: linear-gradient(135deg, hsl(var(--meowy-gradient-pink)), hsl(var(--meowy-gradient-purple)) 30%, hsl(var(--meowy-gradient-teal)) 70%, hsl(var(--meowy-gradient-cyan)));
+  }
+
+  .bg-gradient-section-alt {
+    background: linear-gradient(180deg, hsl(var(--meowy-gradient-cyan)), hsl(var(--meowy-gradient-teal)) 50%, hsl(var(--meowy-gradient-purple)));
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/50;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-card-teal {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40;
+    box-shadow: 0 8px 32px -8px hsl(175 50% 50% / 0.15);
+  }
+
+  .glow-sphere {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+/* Ripple animation */
+@keyframes ripple-expand {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Bloom pulse animation */
+@keyframes bloom-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+/* Snowfall animation */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+.animate-snowfall {
+  animation: snowfall linear infinite;
+}
+
+/* Custom font import */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&display=swap');
+
+/* Handwritten font utility */
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+}
