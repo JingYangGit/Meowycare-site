@@ -52,7 +52,7 @@ const Navbar = () => {
           onClick={() => navigate("/")}
           className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
         >
-          <img src="/favicon.svg" alt="MeowyCare" className="w-6 h-6 rounded-full" />
+          <img src="/favicon-v2.svg" alt="MeowyCare" className="w-6 h-6 rounded-full" />
           <span className="text-sm font-medium tracking-wide">MeowyCare</span>
         </button>
 

@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/favicon.ico", "destination": "/favicon.svg" },
+    { "source": "/favicon.ico", "destination": "/favicon-v2.svg" },
     { "source": "/((?!.*\\..*).*)", "destination": "/index.html" }
   ]
 }
